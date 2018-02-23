@@ -99,6 +99,7 @@ public class AppArrayAdapter extends ArrayAdapter<AppDetail> {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent();
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
                 if (app.intentUri != null) {
                     try {
                         i = Intent.parseUri(app.intentUri.toString(), Intent.URI_INTENT_SCHEME);
